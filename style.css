@@ -1,0 +1,9 @@
+.hide{ /*делает элемент невидимым*/
+  display: none;
+}  
+.car{
+  width: 50px;
+  height: 100px;
+  background: transparent url(./image/player.png) center / cover no-repeat;
+}
+/*добавили автомобиль, по центру, чтобы он норм растянулся с правилными параметрами*/
