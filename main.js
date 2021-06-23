@@ -42,11 +42,7 @@ function getQuantityElements(heightElement) {
   //эта функция вычислит ск-ко элементов поместится на странице с этой высотой
   //вычисляем высоту страницы, и с помощью return будет возвращаться конкретное значение
   return document.documentElement.clientHeight / heightElement + 1;
-  
-
 }
-
-
 
 function startGame() {
   start.classList.add('hide'); //start.classList.add('hide') связано с css, см. класс hide в css
