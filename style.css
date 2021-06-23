@@ -1,9 +1,85 @@
-.hide{ /*делает элемент невидимым*/
+/*RESET CSS*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/*Ниже наш код, выше RESET CSS*/
+.hide { /*делает элемент невидимым*/
   display: none;
 }  
-.car{
+.car, .enemy {
   width: 50px;
   height: 100px;
   background: transparent url(./image/player.png) center / cover no-repeat;
+  position: absolute;
+  left: 125px; /*автомобиль по центру*/
+  bottom: 10px;/*автомобиль расположен внизу на 10рх*/
 }
-/*добавили автомобиль, по центру, чтобы он норм растянулся с правилными параметрами*/
+/*добавили автомобиль, по центру, чтобы он норм растянулся с правильными параметрами*/
+/*Чтобы управлять автомобилем, нам нужно, чтобы он был в position: absolute, поэтому родитель gameArea должен быть в position: relative*/
+/*left: 125px; получили так: ширина дороги gameArea width: 300px/2 это 150хр, 
+но еще надо поделить пополам сам автомобиль, а он car width: 50px/2 это 25рх, итого 150-25=125*/
+
+
+.gameArea {
+  width: 300px;
+  height: 100%;
+  position: relative; /*управление*/
+  margin: auto; /*дорога по центру*/
+  background: #5b5b5b;
+  overflow: hidden; /*чтобы не прыгало, когда линии едут*/
+
+}
+
+
+/*создадим стиль для линий, они будут двигаться и создадут видимость движения*/
+.line {
+  position: absolute;
+  width: 10px;
+  height: 50px;
+  background: #D1993C;
+  left: 145;
+  /*left это ширина области300/2=150 ширина линии10/2=5 150-5=145*/
+}
+
