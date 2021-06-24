@@ -5,4 +5,4 @@
 ## Используются технологии:
   - JavaScript;
   - CSS;
-  - HTML.
+  - HTML
