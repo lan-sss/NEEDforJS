@@ -1,4 +1,3 @@
-/*RESET CSS*/
 html,
 body,
 div,
@@ -87,7 +86,6 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,
@@ -124,40 +122,104 @@ table {
   border-spacing: 0;
 }
 
-/*Ниже наш код, выше RESET CSS*/
+.start {
+  position: absolute; 
+  margin-top: 20px;
+  margin-left: 400px;
+  margin-right: auto;
+  width: 200px;
+  padding: 1rem 0;
+  text-align: center;
+  z-index: 200;
+  background-color: rgb(94, 202, 188);
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  vertical-align: middle;
+  
+}
+.score {
+  position: absolute; 
+  margin-top: 20px;
+  margin-left: 400px;
+  margin-right: auto;
+  width: 200px;
+  padding: 1rem 0;
+  text-align: center;
+  z-index: 200;
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 5px; 
+  vertical-align: middle;
+}
+
 .hide {
-  /*делает элемент невидимым*/
   display: none;
 }
-.car,
-.enemy {
+
+.car {
   width: 50px;
   height: 100px;
   background: transparent url(./image/player.png) center / cover no-repeat;
   position: absolute;
-  left: 125px; /*автомобиль по центру*/
-  bottom: 10px; /*автомобиль расположен внизу на 10рх*/
+  transition: 0.5s;
 }
-/*добавили автомобиль, по центру, чтобы он норм растянулся с правильными параметрами*/
-/*Чтобы управлять автомобилем, нам нужно, чтобы он был в position: absolute, поэтому родитель gameArea должен быть в position: relative*/
-/*left: 125px; получили так: ширина дороги gameArea width: 300px/2 это 150хр, 
-но еще надо поделить пополам сам автомобиль, а он car width: 50px/2 это 25рх, итого 150-25=125*/
 
+.enemy {
+  width: 50px;
+  height: 100px;
+  position: absolute;
+  left: 125px; 
+  bottom: 10px; 
+
+}
 .gameArea {
-    width: 300px;
-  height: 100%;
-  position: relative; /*управление*/
-  margin: auto; /*дорога по центру*/
+  width: 300px;
+  position: relative; 
+  margin: auto; 
   background: #5b5b5b;
-  overflow: hidden; /*чтобы не прыгало, когда линии едут*/
+  overflow: hidden; 
 }
 
-/*создадим стиль для линий, они будут двигаться и создадут видимость движения*/
 .line {
   position: absolute;
   width: 10px;
   height: 50px;
-  background: #d1993c;
+  background: #eee9e1;
   left: 145;
-  /*left это ширина области300/2=150 ширина линии10/2=5 150-5=145*/
 }
+
+.green {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: transparent url(./image/green_3.png) center / cover no-repeat;
+  
+}
+.green1 {
+  position: absolute;
+  width: 50px;
+  height: 60px;
+  background: transparent url(./image/green_1.png) center / cover no-repeat;
+  left: 260px; 
+}
+.green2 {
+  position: absolute;
+  width: 50px;
+  height: 60px;
+  background: transparent url(./image/green_2.png) center / cover no-repeat;  
+}
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); 
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important; 
+  width: 1px !important; 
+  overflow: hidden;
+}
+
